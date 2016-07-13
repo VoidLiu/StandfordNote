@@ -1,0 +1,55 @@
+# standford iOS8 swift
+
+## Class 1
+
+    @IBOutlet weak var display: UITextField!
+
+：-> 表示类型
+！-> 表示一个确定的类型。
+var -> 表示声明了一个变量
+weak -> 表示属性
+swift 的所有对象都在堆里，swift 会自己做内存管理
+
+    @IBAction func AppendDigit(sender: UIButton)
+
+func -> 指方法
+
+
+	let digit = xxx
+let 表示常量
+
+println(“digit = \()”)
+swift 中 \() 括号中可以放一个表达式， swift 会把表达式换成string，然后拼在字符串中
+
+        let digitNum = sender.currentTitle!
+        display.text! = display.text! + digitNum
+        
+digitNum 已经是一个string 了， 你不能将一个string 附给一个option string
+
+    var  userIsInputingNumerInDisplay:Bool = false
+在swift 中我们定义变量时必须给其附上初值。
+两种方式，一种是直接赋值，一种用init 方法。
+#### _class 4 code_ 
+
+	class ViewController: UIViewController
+	{
+	    var  userIsInputingNumerInDisplay:Bool = false
+	    @IBOutlet weak var display: UITextField!
+	    
+	    @IBAction func AppendDigit(sender: UIButton)
+	    {
+	        let digitNum = sender.currentTitle!
+	        if userIsInputingNumerInDisplay
+	        {
+	            display.text! = display.text! + digitNum
+	        }
+	        else
+	        {
+	            display.text! = digitNum
+	            userIsInputingNumerInDisplay = true
+	            
+	        }
+
+	    }
+
+
