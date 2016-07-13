@@ -53,3 +53,101 @@ digitNum 已经是一个string 了， 你不能将一个string 附给一个optio
 	    }
 
 
+
+
+## Class 2
+	var operandStack	=	Array<Double>()
+	//    var OperatorStack : Array<Double> = Array<Double>()
+	
+
+### Computed Properties
+相当于 set 与 get 方法
+
+	var  displayValue : Double
+	    {
+	        get{
+	            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+	        }
+	        set{
+	            display.text! = "\(newValue)"
+	            userIsInputingNumerInDisplay = false
+	        }
+	        
+	    }	
+
+这个变量相当于说，有两个方法 set 跟 get
+set 就是吧现在的displayValue 给 dispaly框
+get 就是把现在的输入框的值转成double 返回出来
+
+
+### 定义函数
+
+	func PreformOperation (_Operator(Double, Double)->Double_)-> Double
+	{
+		
+	}
+	
+	
+
+//这个定义指的是这是一个函数PerformOperation，函数的参数是另一个函数Operation，Operation 这个函数有两个参数，分别都是Double类型的，返回值也是一个double 类型，而外层的这个PerformOperation函数也会返回double类型。
+
+
+### 初步的计算部分函数
+    @IBAction func operatorFunction(sender: UIButton)
+    {
+        let operation = sender.currentTitle!
+        print("operation is \(operation)")
+
+        switch operation
+        {
+        //此处参数传进来的是不同的函数，函数满足参数是两个Double类型，返回值是一个double类型
+        case "+": preformOperation(AddNumber)
+        case "−": preformOperation(sub)
+        case "×": preformOperation(mul)
+        case "÷": preformOperation(division)
+            
+        default:
+            break
+        }
+    }
+    
+    //这个函数用来做栈操作，入栈跟出栈
+    func preformOperation(operation:(Double, Double)-> Double)
+    {
+        if OperatorStack.count >= 2
+        {
+        displayValue    = operation(OperatorStack.removeLast(),OperatorStack.removeLast())
+		            Enter()
+		            print("the stack is \(OperatorStack)")
+		            print("the calculate value is \(displayValue)")
+		        }
+		    }
+        
+
+`removelist()这个函数相当于是出栈，从最后弹出一个元素。`
+
+
+`mutating func removeLast() -> Element`
+		
+
+`Description	
+		Remove an element from the end of the Array in O(1).
+		Requires: count > 0.`
+
+
+    //定义的函数
+    func AddNumber(op1:Double,op2:Double) -> Double
+    {
+        return op1 + op2
+    }
+    func sub(op1:Double, op2:Double) -> Double
+    {
+        return op2 - op1
+        
+    }
+    func mul(op1: Double,op2:Double) -> Double {
+        return op1 * op2
+    }
+    func division(op1: Double,op2:Double) -> Double {
+        return op2 / op1
+    }
