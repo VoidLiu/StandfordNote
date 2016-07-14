@@ -43,10 +43,11 @@ class ViewController: UIViewController
 
         switch operation
         {
-        case "+": preformOperation(AddNumber)
-        case "−": preformOperation(sub)
-        case "×": preformOperation(mul)
-        case "÷": preformOperation(division)
+        case "+": preformOperation {$0 + $1}
+        case "−": preformOperation {$1 - $0}
+        case "×": preformOperation {$1 * $0}
+        case "÷": preformOperation {$1 / $0}
+        case "√": preformOperationOneOperator {sqrt($0)}
             
         default:
             break
@@ -65,21 +66,17 @@ class ViewController: UIViewController
         }
     }
     
-    func AddNumber(op1:Double,op2:Double) -> Double
+    func preformOperationOneOperator(operation: Double-> Double)
     {
-        return op1 + op2
+        if OperatorStack.count >= 1
+        {
+            displayValue    = operation(OperatorStack.removeLast())
+            Enter()
+            print("the stack is \(OperatorStack)")
+            print("the calculate value is \(displayValue)")
+        }
     }
-    func sub(op1:Double, op2:Double) -> Double
-    {
-        return op2 - op1
-        
-    }
-    func mul(op1: Double,op2:Double) -> Double {
-        return op1 * op2
-    }
-    func division(op1: Double,op2:Double) -> Double {
-        return op2 / op1
-    }
+
     
     
     var OperatorStack : Array<Double> = Array<Double>()

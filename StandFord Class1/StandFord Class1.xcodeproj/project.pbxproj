@@ -13,6 +13,7 @@
 		9F6D9EE21D35DE5D006A313F /* StandFord_Class1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D9EE01D35DE5D006A313F /* StandFord_Class1.xcdatamodeld */; };
 		9F6D9EE41D35DE5D006A313F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6D9EE31D35DE5D006A313F /* Assets.xcassets */; };
 		9F6D9EE71D35DE5D006A313F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6D9EE51D35DE5D006A313F /* LaunchScreen.storyboard */; };
+		9F6D9EEF1D378C84006A313F /* CalculationBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D9EEE1D378C84006A313F /* CalculationBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9F6D9EE31D35DE5D006A313F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6D9EE61D35DE5D006A313F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6D9EE81D35DE5D006A313F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F6D9EEE1D378C84006A313F /* CalculationBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculationBrain.swift; path = ../CalculationBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		9F6D9ED81D35DE5D006A313F /* StandFord Class1 */ = {
 			isa = PBXGroup;
 			children = (
+				9F6D9EEE1D378C84006A313F /* CalculationBrain.swift */,
 				9F6D9ED91D35DE5D006A313F /* AppDelegate.swift */,
 				9F6D9EDB1D35DE5D006A313F /* ViewController.swift */,
 				9F6D9EDD1D35DE5D006A313F /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6D9EEF1D378C84006A313F /* CalculationBrain.swift in Sources */,
 				9F6D9EDC1D35DE5D006A313F /* ViewController.swift in Sources */,
 				9F6D9EE21D35DE5D006A313F /* StandFord_Class1.xcdatamodeld in Sources */,
 				9F6D9EDA1D35DE5D006A313F /* AppDelegate.swift in Sources */,
